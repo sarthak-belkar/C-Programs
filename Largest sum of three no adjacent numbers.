@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+ 
+    int sum = 0, sum1 = 0;
+    int ar[] = {2, 100, 4, 5, 99, 100, 46, 7, 100};
+    int size = sizeof(ar)/sizeof(ar[0]);
+
+    for(int i = 0; i < size; i++) {
+        for(int j = 2; j < size; j++) {
+            for(int z = 4; z < size; z++) {
+                if((i != j && i != j+1 && i != j-1) && (i != z && i != z+1 && i != z-1) && (j != z && j != z+1 && j != z-1));
+                sum1 = ar[i]+ar[j]+ar[z];
+                if(sum1>sum) {
+                    sum = sum1;
+                }
+            }
+        }
+    }
+    printf("%d ", sum);
+
+    return 0;
+}
